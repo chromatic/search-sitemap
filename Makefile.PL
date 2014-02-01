@@ -14,5 +14,5 @@ test_requires $_ for qw(
     Test::Most Test::Mock::LWP::UserAgent ok
 );
 
-extra_tests;
-WriteAll;
+extra_tests();
+WriteAll();
