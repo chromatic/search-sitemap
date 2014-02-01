@@ -13,6 +13,7 @@ use XML::Twig;
 use IO::File;
 use Carp qw( carp croak );
 use HTML::Entities qw( decode_entities );
+use Class::Load;
 use namespace::clean -except => 'meta';
 
 has 'urls'  => (
@@ -20,7 +21,7 @@ has 'urls'  => (
     isa     => SitemapUrlStore,
     coerce  => 1,
     default => sub {
-        Class::MOP::load_class( 'Search::Sitemap::URLStore::Memory' );
+        Class::Load::load_class( 'Search::Sitemap::URLStore::Memory' );
         return Search::Sitemap::URLStore::Memory->new;
     },
     handles => {
@@ -79,7 +80,7 @@ has 'have_zlib' => (
     lazy    => 1,
     default => sub {
         local $@;
-        eval { Class::MOP::load_class( 'IO::Zlib' ) };
+        eval { Class::Load::load_class( 'IO::Zlib' ) };
         return $@ ? 0 : 1;
     },
 );

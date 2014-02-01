@@ -1,5 +1,8 @@
 Revision history for Perl extension Search::Sitemap.
 
+2.14
+    - fixed Class::MOP deprecation (ZOFFIX, RT #90909)
+
 2.13
     - Finally updated after a long hiatus (sorry about that)
     - Special thanks to Alex J. G. Burzynski, who wrote all the patches

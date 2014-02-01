@@ -7,7 +7,7 @@ requires $_ for qw(
     Moose LWP::UserAgent XML::Twig IO::File Carp POSIX IO::Zlib Class::Trigger
     HTML::Entities Module::Find Moose::Util::TypeConstraints MooseX::Types
     MooseX::Types::Moose MooseX::ClassAttribute namespace::clean
-    MooseX::Types::URI DateTime
+    MooseX::Types::URI DateTime  Class::Load
 );
 
 test_requires $_ for qw(
